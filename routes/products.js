@@ -97,22 +97,6 @@ router.delete('/:pid', (req, res) => {
 export default router;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [
     {
       "id": 1,
