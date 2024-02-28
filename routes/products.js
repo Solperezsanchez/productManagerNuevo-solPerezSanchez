@@ -1,98 +1,21 @@
 import express from 'express';
 const router = express.Router();
-
-
-import ProductManager from '../productManager.js';
-const productManager = new ProductManager('../productos.json');
+import ProductController from './productController.js';
 
 // Ruta raíz GET /api/products
-router.get('/', (req, res) => {
- 
-  const products = productManager.getProducts();
-
-  if (products.length > 0) {
-      
-      res.json(products);
-  } else {
-      
-      res.status(404).json({ message: 'No se encontraron productos' });
-  }
-});
+router.get('/', ProductController.getProducts);
 
 // Ruta GET /api/products/:pid
-router.get('/:pid', (req, res) => {
- 
-  const productId = parseInt(req.params.pid);
-  
-  
-  const product = productManager.getProductById(productId);
-
- 
-  if (product) {
-     
-      res.json(product);
-  } else {
-     
-      res.status(404).json({ message: 'Producto no encontrado' });
-  }
-});
+router.get('/:pid', ProductController.getProductById);
 
 // Ruta raíz POST /api/products
-router.post('/', (req, res) => {
- 
-  const productData = req.body;
-  
-  
-  if (!productData.title || !productData.description || !productData.price || !productData.thumbnail || !productData.code || !productData.stock) {
-      return res.status(400).json({ message: 'Todos los campos son obligatorios.' });
-  }
-  
-  
-  productManager.addProduct(productData);
-
-  
-  res.status(201).json({ message: 'Producto agregado correctamente' });
-});
-
+router.post('/', ProductController.addProduct);
 
 // Ruta PUT /api/products/:pid
-router.put('/:pid', (req, res) => {
- 
-  const productId = parseInt(req.params.pid);
-  
-  
-  const updatedFields = req.body;
-  
-  
-  const product = productManager.getProductById(productId);
-  if (!product) {
-      return res.status(404).json({ message: 'Producto no encontrado' });
-  }
-  
-  
-  productManager.updateProduct(productId, updatedFields);
-
- 
-  res.json({ message: 'Producto actualizado correctamente' });
-});
+router.put('/:pid', ProductController.updateProduct);
 
 // Ruta DELETE /api/products/:pid
-router.delete('/:pid', (req, res) => {
-  
-  const productId = parseInt(req.params.pid);
-  
-  
-  const product = productManager.getProductById(productId);
-  if (!product) {
-      return res.status(404).json({ message: 'Producto no encontrado' });
-  }
-  
- 
-  productManager.deleteProduct(productId);
-
- 
-  res.json({ message: 'Producto eliminado correctamente' });
-});
+router.delete('/:pid', ProductController.deleteProduct);
 
 export default router;
 
