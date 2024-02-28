@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 import ProductManager from '../productManager.js';
-const productManager = new ProductManager('ruta/al/archivo/de/productos.json');
+const productManager = new ProductManager('../productos.json');
 
 // Ruta raíz GET /api/products
 router.get('/', (req, res) => {

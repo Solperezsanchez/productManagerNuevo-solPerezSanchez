@@ -3,7 +3,7 @@ import express from 'express';
 const router = express.Router();
 
 import CartManager from '../cartManager.js';
-const cartManager = new CartManager('ruta/al/archivo/de/carritos.json');
+const cartManager = new CartManager('../carritos.json');
 
 // Ruta POST /api/carts
 router.post('/', (req, res) => {

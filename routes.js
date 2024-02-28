@@ -36,4 +36,39 @@ router.get('/products/:pid', async (req, res) => {
   }
 });
 
+router.post('/products', async (req, res) => {
+  try {
+    const newProduct = req.body;
+    await productManager.addProduct(newProduct);
+    res.status(201).send('Producto agregado correctamente');
+  } catch (error) {
+    console.error('Error al agregar producto:', error.message);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
+router.put('/products/:pid', async (req, res) => {
+  try {
+    const productId = parseInt(req.params.pid);
+    const updatedFields = req.body;
+    await productManager.updateProduct(productId, updatedFields);
+    res.status(200).send('Producto actualizado correctamente');
+  } catch (error) {
+    console.error('Error al actualizar producto:', error.message);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
+router.delete('/products/:pid', async (req, res) => {
+  try {
+    const productId = parseInt(req.params.pid);
+    await productManager.deleteProduct(productId);
+    res.status(200).send('Producto eliminado correctamente');
+  } catch (error) {
+    console.error('Error al eliminar producto:', error.message);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
 export default router;
+
