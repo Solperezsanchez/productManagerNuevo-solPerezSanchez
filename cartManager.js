@@ -3,7 +3,16 @@ const fs = require('fs');
 class CartManager {
     constructor(filePath) {
         this.filePath = filePath;
+        this.initFile();
         this.carts = this.loadCarts();
+    }
+
+    initFile() {
+        try {
+            fs.accessSync(this.filePath, fs.constants.F_OK);
+        } catch (error) {
+            fs.writeFileSync(this.filePath, '[]');
+        }
     }
 
     loadCarts() {
@@ -27,8 +36,8 @@ class CartManager {
 
     createCart() {
         const newCart = {
-            id: Date.now(), 
-            products: []    
+            id: Date.now(),
+            products: []
         };
         this.carts.push(newCart);
         this.saveCarts();
@@ -100,3 +109,4 @@ class CartManager {
 }
 
 module.exports = CartManager;
+
