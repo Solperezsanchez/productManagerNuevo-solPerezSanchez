@@ -1,55 +1,58 @@
 [
-    {
-      "id": 1,
-      "userId": 123,
-      "createdAt": "2024-02-29T12:00:00Z",
-      "updatedAt": "2024-02-29T12:30:00Z",
-      "items": [
-        {
-          "productId": 1,
-          "productName": "Elite trainer box 151",
-          "quantity": 2,
-          "price": 185000,
-          "subtotal": 370000,
-          "thumbnail": "img/etbSnorlax.png"
-        },
-        {
-          "productId": 3,
-          "productName": "Elite trainer box Paradox Rift Scarlet and Violet Paradox Rift",
-          "quantity": 1,
-          "price": 190000,
-          "subtotal": 190000,
-          "thumbnail": "img/etbParadoxRift.png"
-        }
-      ],
-      "totalItems": 3,
-      "totalPrice": 560000
-    },
-    {
-      "id": 2,
-      "userId": 456,
-      "createdAt": "2024-02-28T15:30:00Z",
-      "updatedAt": "2024-02-29T10:45:00Z",
-      "items": [
-        {
-          "productId": 2,
-          "productName": "Elite trainer box vivid voltage",
-          "quantity": 1,
-          "price": 170000,
-          "subtotal": 170000,
-          "thumbnail": "img/etbPikachu.png"
-        },
-        {
-          "productId": 5,
-          "productName": "Elite trainer box Lost Origin",
-          "quantity": 3,
-          "price": 200000,
-          "subtotal": 600000,
-          "thumbnail": "img/etbLostOrigin.jpg"
-        }
-      ],
-      "totalItems": 4,
-      "totalPrice": 770000
-    }
-  ]
-  
+  {
+    "id": 1,
+    "userId": 123,
+    "createdAt": "2024-02-29T12:00:00Z",
+    "updatedAt": "2024-02-29T12:30:00Z",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "Elite trainer box 151",
+        "quantity": 2,
+        "price": 185000,
+        "subtotal": 370000,
+        "thumbnail": "img/etbSnorlax.png"
+      },
+      {
+        "productId": 3,
+        "productName": "Elite trainer box Paradox Rift Scarlet and Violet Paradox Rift",
+        "quantity": 1,
+        "price": 190000,
+        "subtotal": 190000,
+        "thumbnail": "img/etbParadoxRift.png"
+      }
+    ],
+    "totalItems": 3,
+    "totalPrice": 560000
+  },
+  {
+    "id": 2,
+    "userId": 456,
+    "createdAt": "2024-02-28T15:30:00Z",
+    "updatedAt": "2024-02-29T10:45:00Z",
+    "items": [
+      {
+        "productId": 2,
+        "productName": "Elite trainer box vivid voltage",
+        "quantity": 1,
+        "price": 170000,
+        "subtotal": 170000,
+        "thumbnail": "img/etbPikachu.png"
+      },
+      {
+        "productId": 5,
+        "productName": "Elite trainer box Lost Origin",
+        "quantity": 3,
+        "price": 200000,
+        "subtotal": 600000,
+        "thumbnail": "img/etbLostOrigin.jpg"
+      }
+    ],
+    "totalItems": 4,
+    "totalPrice": 770000
+  },
+  {
+    "id": 1709230652442,
+    "products": []
+  }
+]
