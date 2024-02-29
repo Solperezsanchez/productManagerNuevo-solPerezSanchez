@@ -1,6 +1,6 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import ProductController from './productController.js';
+const ProductController = require('./productController.js');
 
 // Ruta raíz GET /api/products
 router.get('/', ProductController.getProducts);
@@ -17,7 +17,7 @@ router.put('/:pid', ProductController.updateProduct);
 // Ruta DELETE /api/products/:pid
 router.delete('/:pid', ProductController.deleteProduct);
 
-export default router;
+module.exports = router;
 
 
 [

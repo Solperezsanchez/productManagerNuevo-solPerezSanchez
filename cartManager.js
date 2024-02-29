@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 
 class CartManager {
     constructor(filePath) {
@@ -40,7 +40,7 @@ class CartManager {
         return cart ? cart.products : [];
     }
 
-     addProductToCart(cartId, product) {
+    addProductToCart(cartId, product) {
         const cart = this.carts.find(cart => cart.id === cartId);
         if (cart) {
             cart.products.push(product);
@@ -50,8 +50,7 @@ class CartManager {
         }
     }
 
-     
-     getProductFromCart(cartId, productId) {
+    getProductFromCart(cartId, productId) {
         const cart = this.carts.find(cart => cart.id === cartId);
         if (cart) {
             const product = cart.products.find(product => product.id === productId);
@@ -62,8 +61,7 @@ class CartManager {
         }
     }
 
-     
-     updateProductQuantity(cartId, productId, newQuantity) {
+    updateProductQuantity(cartId, productId, newQuantity) {
         const cart = this.carts.find(cart => cart.id === cartId);
         if (cart) {
             const product = cart.products.find(product => product.id === productId);
@@ -101,4 +99,4 @@ class CartManager {
     }
 }
 
-export default CartManager;
+module.exports = CartManager;

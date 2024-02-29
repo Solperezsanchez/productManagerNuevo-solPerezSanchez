@@ -1,6 +1,6 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import CartController from './cartController.js';
+const CartController = require('./cartController.js');
 
 // Ruta POST /api/carts
 router.post('/', CartController.createCart);
@@ -20,4 +20,4 @@ router.put('/:cid/products/:pid', CartController.updateProductQuantity);
 // Ruta DELETE /api/carts/:cid/products/:pid
 router.delete('/:cid/products/:pid', CartController.deleteProductFromCart);
 
-export default router;
+module.exports = router;

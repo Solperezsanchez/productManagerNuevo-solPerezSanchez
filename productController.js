@@ -1,4 +1,4 @@
-import ProductManager from '../productManager.js';
+const ProductManager = require('../productManager.js');
 
 const productManager = new ProductManager('../productos.json');
 
@@ -75,4 +75,4 @@ const ProductController = {
   }
 };
 
-export default ProductController;
+module.exports = ProductController;

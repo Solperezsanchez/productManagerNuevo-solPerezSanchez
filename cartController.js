@@ -1,4 +1,4 @@
-import CartManager from '../cartManager.js';
+const CartManager = require('../cartManager.js');
 
 const cartManager = new CartManager('../carritos.json');
 
@@ -81,4 +81,4 @@ const CartController = {
   }
 };
 
-export default CartController;
+module.exports = CartController;
