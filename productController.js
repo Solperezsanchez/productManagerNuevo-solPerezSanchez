@@ -1,6 +1,6 @@
-const ProductManager = require('../productManager.js');
+const ProductManager = require('./productManager');
 
-const productManager = new ProductManager('../productos.json');
+const productManager = new ProductManager('./productos.json');
 
 const ProductController = {
   getAllProducts: async (req, res) => {

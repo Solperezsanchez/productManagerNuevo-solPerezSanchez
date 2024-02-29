@@ -1,6 +1,6 @@
-const CartManager = require('../cartManager.js');
+const CartManager = require('./cartManager');
 
-const cartManager = new CartManager('../carritos.json');
+const cartManager = new CartManager('./carritos.json');
 
 const CartController = {
   createCart: async (req, res) => {
