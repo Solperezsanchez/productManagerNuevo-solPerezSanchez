@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-// Configurar Handlebars como motor de vistas
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
