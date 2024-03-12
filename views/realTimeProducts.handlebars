@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Mew - Productos en tiempo real</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+        body {
+            font-family: 'Fonseca', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f50057;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        li {
+            width: 300px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            padding: 20px;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .product h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #f50057;
+        }
+
+        .product p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .product .price {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Proyecto Mew - Productos en tiempo real</h1>
+    </header>
+    <main>
+        <ul>
+            {{#each products}}
+            <li class="product">
+                <img src="{{this.thumbnail}}" alt="{{this.productName}}">
+                <h2>{{this.productName}}</h2>
+                <p>{{this.description}}</p>
+                <p class="price">Precio: ${{this.price}}</p>
+                <p>Cantidad: {{this.quantity}}</p>
+            </li>
+            {{/each}}
+        </ul>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
